@@ -1,58 +1,58 @@
-import React, { useState, useEffect } from "react";
-import { getMyInfo } from "../services";
+import React, { useState, useEffect } from 'react'
+import { getMyInfo } from '../services'
 
 const AboutMeInfo = () => {
   const getContentFragment = (index, text, obj, type) => {
-    let modifiedText = text;
+    let modifiedText = text
 
     if (obj) {
       if (obj.bold) {
-        modifiedText = <b key={index}>{text}</b>;
+        modifiedText = <b key={index}>{text}</b>
       }
 
       if (obj.italic) {
-        modifiedText = <em key={index}>{text}</em>;
+        modifiedText = <em key={index}>{text}</em>
       }
 
       if (obj.underline) {
-        modifiedText = <u key={index}>{text}</u>;
+        modifiedText = <u key={index}>{text}</u>
       }
     }
 
     switch (type) {
-      case "heading-three":
+      case 'heading-three':
         return (
           <h3 key={index} className="text-xl font-semibold mb-4">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h3>
-        );
-      case "paragraph":
+        )
+      case 'paragraph':
         return (
           <p key={index} className="mb-8 md:text-base text-sm">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </p>
-        );
-      case "heading-four":
+        )
+      case 'heading-four':
         return (
           <h4 key={index} className="text-md font-semibold mb-4">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h4>
-        );
-      case "link":
+        )
+      case 'link':
         return (
           <p key={index} className="mb-8">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </p>
-        );
-      case "image":
+        )
+      case 'image':
         return (
           <img
             key={index}
@@ -61,17 +61,17 @@ const AboutMeInfo = () => {
             width={obj.width}
             src={obj.src}
           />
-        );
+        )
       default:
-        return modifiedText;
+        return modifiedText
     }
-  };
+  }
 
-  const [info, setInfo] = useState([]);
+  const [info, setInfo] = useState([])
 
   useEffect(() => {
-    getMyInfo().then((newInfo) => setInfo(newInfo));
-  }, []);
+    getMyInfo().then((newInfo) => setInfo(newInfo))
+  }, [])
 
   return (
     <div className="bg-white shadow=lg rounded-lg p-8 mb-8">
@@ -88,12 +88,12 @@ const AboutMeInfo = () => {
       {info.introduction?.raw.children.map((typeObj, index) => {
         const children = typeObj.children.map((item, itemIndex) =>
           getContentFragment(itemIndex, item.text, item)
-        );
+        )
 
-        return getContentFragment(index, children, typeObj, typeObj.type);
+        return getContentFragment(index, children, typeObj, typeObj.type)
       })}
     </div>
-  );
-};
+  )
+}
 
-export default AboutMeInfo;
+export default AboutMeInfo
