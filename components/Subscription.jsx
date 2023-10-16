@@ -10,12 +10,12 @@ const Subscription = () => {
 
     const res = await fetch('/api/subscribe', {
       body: JSON.stringify({
-        email: email,
+        email: email
       }),
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      method: 'POST',
+      method: 'POST'
     })
 
     const { error, message } = await res.json()
@@ -53,19 +53,18 @@ const Subscription = () => {
           >
             Subscribe
           </button>
-          {success
-            ?
+          {success ? (
             <span className="text-md float-left relative font-medium mt-5 text-green-300">
               Email Submitted! You will receive an email in your inbox.
             </span>
-            :
+          ) : (
             <span className="text-md float-left relative font-medium mt-5 text-red-800">
               {error}
             </span>
-          }
+          )}
         </form>
       </div>
-    </div >
+    </div>
   )
 }
 

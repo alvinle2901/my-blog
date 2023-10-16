@@ -1,15 +1,24 @@
-import { PostCard, Categories, PostWidget, MyInfo, FeaturedPosts, Subscription } from '../components'
+import {
+  PostCard,
+  Categories,
+  PostWidget,
+  MyInfo,
+  FeaturedPosts,
+  Subscription
+} from '../components'
 import { getPosts } from '../services'
 import Head from 'next/head'
 
 export default function Home({ posts }) {
-
   return (
     <div className="container mx-auto md:px-10 px-4 mb-8">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>chú pé ngu ngục</title>
-        <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width,minimum-scale=1, initial-scale=1"
+        />
       </Head>
       <FeaturedPosts />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -36,7 +45,6 @@ export async function getStaticProps() {
   const posts = (await getPosts()) || []
 
   return {
-    props: { posts },
+    props: { posts }
   }
 }
-

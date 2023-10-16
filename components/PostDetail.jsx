@@ -1,56 +1,56 @@
-import React from "react";
-import moment from "moment";
+import React from 'react'
+import moment from 'moment'
 
-import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
+import ImageGallery from 'react-image-gallery'
+import 'react-image-gallery/styles/css/image-gallery.css'
 
 const PostDetail = ({ post }) => {
-  const images = [];
+  const images = []
 
   const getContentFragment = (index, text, obj, type) => {
-    let modifiedText = text;
+    let modifiedText = text
 
     if (obj) {
       if (obj.bold) {
-        modifiedText = <b key={index}>{text}</b>;
+        modifiedText = <b key={index}>{text}</b>
       }
 
       if (obj.italic) {
-        modifiedText = <em key={index}>{text}</em>;
+        modifiedText = <em key={index}>{text}</em>
       }
 
       if (obj.underline) {
-        modifiedText = <u key={index}>{text}</u>;
+        modifiedText = <u key={index}>{text}</u>
       }
     }
 
     switch (type) {
-      case "heading-three":
+      case 'heading-three':
         return (
           <h3 key={index} className="text-xl font-semibold mb-4">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h3>
-        );
-      case "paragraph":
+        )
+      case 'paragraph':
         return (
           <p key={index} className="mb-8 md:text-base text-sm">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </p>
-        );
-      case "heading-four":
+        )
+      case 'heading-four':
         return (
           <h4 key={index} className="text-md font-semibold mb-4">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h4>
-        );
-      case "image":
-        images.push({ original: obj.src, thumbnail: obj.src });
+        )
+      case 'image':
+        images.push({ original: obj.src, thumbnail: obj.src })
         return (
           <img
             key={index}
@@ -59,11 +59,11 @@ const PostDetail = ({ post }) => {
             width={obj.width}
             src={obj.src}
           />
-        );
+        )
       default:
-        return modifiedText;
+        return modifiedText
     }
-  };
+  }
 
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 md:pb-12 pb-4 mb-8">
@@ -104,7 +104,7 @@ const PostDetail = ({ post }) => {
               />
             </svg>
             <p className="inline align-middle text-gray-700 md:text-lg text-sm">
-              {moment(post.createdAt).format("MMM DD, YYYY")}
+              {moment(post.createdAt).format('MMM DD, YYYY')}
             </p>
           </div>
         </div>
@@ -112,15 +112,15 @@ const PostDetail = ({ post }) => {
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemIndex) =>
             getContentFragment(itemIndex, item.text, item)
-          );
-          return getContentFragment(index, children, typeObj, typeObj.type);
+          )
+          return getContentFragment(index, children, typeObj, typeObj.type)
         })}
         {images.length == 0 ? null : (
           <ImageGallery items={images} showPlayButton={false} />
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PostDetail;
+export default PostDetail

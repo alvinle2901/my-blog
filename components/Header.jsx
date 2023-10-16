@@ -1,21 +1,21 @@
-import React, { useContext, useState, useEffect, Fragment } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Menu, Transition } from "@headlessui/react";
+import React, { useContext, useState, useEffect, Fragment } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Menu, Transition } from '@headlessui/react'
 
-import { getCategories } from "../services";
+import { getCategories } from '../services'
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ')
 }
 
 const Header = () => {
-  const [categories, setCategories] = useState([]);
-  const [navbar, setNavbar] = useState(false);
+  const [categories, setCategories] = useState([])
+  const [navbar, setNavbar] = useState(false)
 
   useEffect(() => {
-    getCategories().then((newCategories) => setCategories(newCategories));
-  }, []);
+    getCategories().then((newCategories) => setCategories(newCategories))
+  }, [])
 
   return (
     <div className="container mx-auto px-10 mb-8">
@@ -98,9 +98,9 @@ const Header = () => {
                           href={`/category/${category.slug}`}
                           className={classNames(
                             active
-                              ? "bg-gray-100 text-gray-900"
-                              : "text-gray-700",
-                            "block px-4 py-2 text-sm sticky"
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
+                            'block px-4 py-2 text-sm sticky'
                           )}
                         >
                           {category.name}
@@ -117,7 +117,7 @@ const Header = () => {
       <div>
         <div
           className={`flex-1 justify-self-center pb-3 md:block md:pb-0 ${
-            navbar ? "p-8 md:p-0 block" : "hidden"
+            navbar ? 'p-8 md:p-0 block' : 'hidden'
           }`}
         >
           <ul className="md:hidden h-screen md:h-auto items-center justify-center md:flex ">
@@ -125,7 +125,7 @@ const Header = () => {
               <Link href="/aboutme">
                 <a
                   onClick={() => {
-                    setNavbar(!navbar);
+                    setNavbar(!navbar)
                   }}
                 >
                   about me
@@ -146,7 +146,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
