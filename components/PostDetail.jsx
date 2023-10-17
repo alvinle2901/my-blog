@@ -115,7 +115,7 @@ const PostDetail = ({ post }) => {
           )
           return getContentFragment(index, children, typeObj, typeObj.type)
         })}
-        {images.length == 0 ? null : (
+        {post.categories[0].slug != 'travel' ? null : (
           <ImageGallery items={images} showPlayButton={false} />
         )}
       </div>
