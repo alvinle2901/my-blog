@@ -1,13 +1,14 @@
-import React from 'react'
-import { Header } from './'
+import React from 'react';
+import { Header, NavBar } from './';
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
+      <NavBar />
+      {/* <Header /> */}
       {children}
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

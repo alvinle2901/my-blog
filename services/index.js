@@ -28,6 +28,12 @@ export const getPosts = async () => {
               name
               slug
             }
+            comments {
+              comment
+              replies {
+                reply
+              }
+            }
           }
         }
       }
