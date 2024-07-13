@@ -3,6 +3,7 @@ import Logo from './Logo';
 
 import { FiMenu } from 'react-icons/fi';
 import { Facebook, Instagram, Linkedin, XCircle } from 'react-feather';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,25 +30,27 @@ const Navbar = () => {
           <nav className="hidden lg:block">
             <ul className="flex items-center m-0 p-0 list-none">
               <li className="px-4 first:ml-0 first:pl-0 last:mr-0 last:pr-0">
-                <a
-                  href="/"
-                  className="inline-block text-black text-xs font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
-                  Home
-                </a>
+                <div className="inline-block text-black text-xs font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
+                  <Link href={`/`} key='home'>
+                    Home
+                  </Link>
+                </div>
               </li>
-              <li className="px-4 first:ml-0 first:pl-0 last:mr-0 last:pr-0">
-                <a
-                  href="#feature-posts"
+              {/* <li className="px-4 first:ml-0 first:pl-0 last:mr-0 last:pr-0">
+                <div
                   className="inline-block text-black text-xs font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
-                  Features
-                </a>
-              </li>
+                  <Link href={`/`} key='home'>
+                    Home
+                  </Link>
+                </div>
+              </li> */}
               <li className="px-4 first:ml-0 first:pl-0 last:mr-0 last:pr-0">
-                <a
-                  href="/aboutme"
+                <div
                   className="inline-block text-black text-xs font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
-                  About Me
-                </a>
+                  <Link href={`/aboutme`} key='aboutme'>
+                    About me
+                  </Link>
+                </div>
               </li>
               <li className="px-4 first:ml-0 first:pl-0 last:mr-0 last:pr-0">
                 <a
