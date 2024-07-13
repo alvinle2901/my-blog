@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
-import { getCategories } from '../services'
+import { getCategories } from '../services';
 
 const Categories = () => {
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    getCategories().then((newCategories) => setCategories(newCategories))
-  }, [])
+    getCategories().then((newCategories) => {
+      if (newCategories) {
+        setCategories(newCategories);
+      } else {
+        setCategories([]);
+      }
+    });
+  }, []);
 
   return (
     <div className="bg-white shadow=lg rounded-lg p-8 mb-8">
@@ -18,15 +24,16 @@ const Categories = () => {
 
       {categories.map((category, index) => (
         <Link key={category.slug} href={`/category/${category.slug}`}>
-          <span className={`cursor-pointer block hover:text-[#ec4899] ${
-            index !== categories.length - 1 ? 'mb-4 pb-2' : ''
-          }`}>
+          <span
+            className={`cursor-pointer block hover:text-[#ec4899] ${
+              index !== categories.length - 1 ? 'mb-4 pb-2' : ''
+            }`}>
             {category.name}
           </span>
         </Link>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;
