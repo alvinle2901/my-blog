@@ -34,9 +34,6 @@ const PostCard = ({ post }) => {
         {/* Excerpt */}
         <p className="text-justify font-light tracking-wide leading-relaxed my-3">
           {post.excerpt}
-          <a href="#">
-            <i class="icon-arrow-right2 ml-1 text-xs"></i>
-          </a>
         </p>
         {/* Read more */}
         <a
