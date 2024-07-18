@@ -1,39 +1,43 @@
-import React, { useState, useEffect } from 'react'
-import Carousel from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css'
+import React, { useState, useEffect } from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
-import { FeaturedPostCard } from './'
-import { getFeaturedPosts } from '../services'
+import { FeaturedPostCard } from './';
+import { getFeaturedPosts } from '../services';
 
 const responsive = {
   superLargeDesktop: {
-    breakpoint: { max: 4000, min: 1024 },
-    items: 5
+    breakpoint: { max: 4000, min: 1536 },
+    items: 4
+  },
+  mediumDesktop: {
+    breakpoint: { max: 1536, min: 1024 },
+    items: 3
   },
   desktop: {
     breakpoint: { max: 1024, min: 768 },
-    items: 3
+    items: 2
   },
   tablet: {
     breakpoint: { max: 768, min: 640 },
-    items: 2
+    items: 1
   },
   mobile: {
     breakpoint: { max: 640, min: 0 },
     items: 1
   }
-}
+};
 
 const FeaturedPosts = () => {
-  const [featuredPosts, setFeaturedPosts] = useState([])
-  const [dataLoaded, setDataLoaded] = useState(false)
+  const [featuredPosts, setFeaturedPosts] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
     getFeaturedPosts().then((result) => {
-      setFeaturedPosts(result)
-      setDataLoaded(true)
-    })
-  }, [])
+      setFeaturedPosts(result);
+      setDataLoaded(true);
+    });
+  }, []);
 
   const customLeftArrow = (
     <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
@@ -42,8 +46,7 @@ const FeaturedPosts = () => {
         className="h-7 text-white w-full"
         fill="none"
         viewBox="-4 0 24 24"
-        stroke="currentColor"
-      >
+        stroke="currentColor">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -52,7 +55,7 @@ const FeaturedPosts = () => {
         />
       </svg>
     </div>
-  )
+  );
 
   const customRightArrow = (
     <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
@@ -61,8 +64,7 @@ const FeaturedPosts = () => {
         className="h-7 text-white w-full"
         fill="none"
         viewBox="-4 0 24 24"
-        stroke="currentColor"
-      >
+        stroke="currentColor">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -71,24 +73,24 @@ const FeaturedPosts = () => {
         />
       </svg>
     </div>
-  )
+  );
 
   return (
     <div className="mb-8">
       <Carousel
-        infinite
-        customLeftArrow={customLeftArrow}
-        customRightArrow={customRightArrow}
+        infinite={false}
+        // customLeftArrow={customLeftArrow}
+        // customRightArrow={customRightArrow}
         responsive={responsive}
-        itemClass="px-5"
-      >
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        itemClass="md:px-8 px-2">
         {dataLoaded &&
           featuredPosts.map((post, index) => (
             <FeaturedPostCard key={index} post={post} />
           ))}
       </Carousel>
     </div>
-  )
-}
+  );
+};
 
-export default FeaturedPosts
+export default FeaturedPosts;
