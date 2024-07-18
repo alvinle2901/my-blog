@@ -22,7 +22,7 @@ const Categories = () => {
         categories
       </h3>
 
-      {categories.map((category, index) => (
+      {categories && categories.map((category, index) => (
         <Link key={category.slug} href={`/category/${category.slug}`}>
           <span
             className={`cursor-pointer block hover:text-[#ec4899] ${

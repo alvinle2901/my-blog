@@ -252,6 +252,12 @@ export const getCategoryPost = async (slug) => {
               name
               slug
             }
+            comments {
+              comment
+              replies {
+                reply
+              }
+            }
           }
         }
       }
