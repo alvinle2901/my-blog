@@ -53,21 +53,26 @@ const PostCard = ({ post }) => {
           </a>
         </div>
         <div class="flex items-center space-x-2">
-          <FacebookShareButton
-            url={`https://www.alvinle29.site/post/${post.slug}`}
-            data-tooltip-id="fb-share"
-            data-tooltip-content="Share to Facebook">
-            <Facebook className="w-4 h-4 mr-2" />
+          <div>
+            <FacebookShareButton
+              url={`https://www.alvinle29.site/post/${post.slug}`}
+              data-tooltip-id="fb-share"
+              data-tooltip-content="Share to Facebook">
+              <Facebook className="w-4 h-4 mr-2" />
+            </FacebookShareButton>
             <Tooltip id="fb-share" />
-          </FacebookShareButton>
+          </div>
 
-          <TwitterShareButton
-            url={`https://www.alvinle29.site/post/${post.slug}`}
-            data-tooltip-id="tw-share"
-            data-tooltip-content="Share to Twitter/X">
-            <Twitter className="w-4 h-4" />
+          <div>
+            <TwitterShareButton
+              url={`https://www.alvinle29.site/post/${post.slug}`}
+              data-tooltip-id="tw-share"
+              data-tooltip-content="Share to Twitter/X">
+              <Twitter className="w-4 h-4" />
+            </TwitterShareButton>
             <Tooltip id="tw-share" />
-          </TwitterShareButton>
+          </div>
+
           <span class="flex items-center pl-2">
             {post.comments.length} <MessageCircle className="w-4 h-4 ml-1" />
           </span>
