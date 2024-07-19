@@ -53,7 +53,7 @@ const PostCard = ({ post }) => {
           </a>
         </div>
         <div class="flex items-center space-x-2">
-          <a
+          {/* <a
             className="mt-1"
             data-tooltip-id="fb-share"
             data-tooltip-content="Share to Facebook">
@@ -72,7 +72,7 @@ const PostCard = ({ post }) => {
               <Twitter className="w-4 h-4" />
               <Tooltip id="tw-share" />
             </TwitterShareButton>
-          </a>
+          </a> */}
           <span class="flex items-center pl-2">
             {post.comments.length} <MessageCircle className="w-4 h-4 ml-1" />
           </span>

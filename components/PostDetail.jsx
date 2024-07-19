@@ -66,17 +66,17 @@ const PostDetail = ({ post }) => {
   }
 
   return (
-    <div className="bg-white shadow-lg rounded-lg lg:p-8 md:pb-12 pb-4 mb-8">
-      <div className="relative overflow-hidden shadow-md mb-6">
+    <div className="bg-white rounded-lg md:pb-12 pb-4 mb-8">
+      <div className="relative overflow-hidden mb-6">
         <img
           src={post.featuredImage.url}
           alt={post.title}
           className="object-top h-full w-full rounded-t-lg"
         />
       </div>
-      <div className="px-4 lg:px-0">
+      <div className="px-8">
         <div className="flex items-center mb-8">
-          <div className="flex items-center mb-4 mb-0 lg:w-auto md:mr-8 mr-5">
+          <div className="flex items-center mb-0 lg:w-auto md:mr-8 mr-5">
             <img
               alt={post.author.name}
               height="30px"
@@ -103,7 +103,7 @@ const PostDetail = ({ post }) => {
                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
               />
             </svg>
-            <p className="inline align-middle text-gray-700 md:text-lg text-sm">
+            <p className="inline align-middle text-gray-700 text-base">
               {moment(post.createdAt).format('MMM DD, YYYY')}
             </p>
           </div>
