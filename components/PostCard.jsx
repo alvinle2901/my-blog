@@ -60,7 +60,7 @@ const PostCard = ({ post }) => {
               data-tooltip-content="Share to Facebook">
               <Facebook className="w-4 h-4 mr-2" />
             </FacebookShareButton>
-            <Tooltip id="fb-share" />
+            {/* <Tooltip id="fb-share" /> */}
           </div>
 
           <div>
@@ -70,7 +70,7 @@ const PostCard = ({ post }) => {
               data-tooltip-content="Share to Twitter/X">
               <Twitter className="w-4 h-4" />
             </TwitterShareButton>
-            <Tooltip id="tw-share" />
+            {/* <Tooltip id="tw-share" /> */}
           </div>
 
           <span class="flex items-center pl-2">
