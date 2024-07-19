@@ -74,7 +74,7 @@ const AboutMeInfo = () => {
   }, [])
 
   return (
-    <div className="bg-white shadow=lg rounded-lg p-8 mb-8">
+    <div className="bg-white rounded-lg p-8 mb-8">
       <h3 className="text-3xl mb-8 border-b pb-4 font-medium text-center">
         About me
       </h3>

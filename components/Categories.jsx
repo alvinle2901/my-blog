@@ -17,7 +17,7 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="bg-white shadow=lg rounded-lg p-8 mb-8">
+    <div className="bg-white rounded-lg p-8 mb-8">
       <h3 className="text-xl uppercase font-[500] mb-4 border-b pb-1">
         categories
       </h3>

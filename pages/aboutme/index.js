@@ -4,7 +4,7 @@ import AboutMeInfo from '../../components/AboutMeInfo'
 
 export default function AboutMe() {
   return (
-    <div className="container mx-auto md:px-10 px-3 mb-8">
+    <div className="container mx-auto md:px-40 sm:px-24 px-4 my-8">
       <Head>
         <title>about me</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
