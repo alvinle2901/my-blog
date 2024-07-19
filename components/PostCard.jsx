@@ -2,12 +2,13 @@ import React from 'react';
 import moment from 'moment';
 import Link from 'next/link';
 
-import { ChevronRight, Facebook, MessageCircle } from 'react-feather';
-import { FaGooglePlus } from 'react-icons/fa6';
+import { Tooltip } from 'react-tooltip';
+import { FacebookShareButton, TwitterShareButton } from 'react-share';
+import { ChevronRight, Facebook, MessageCircle, Twitter } from 'react-feather';
 
 const PostCard = ({ post }) => {
   return (
-    <div className="bg-white rounded-lg p-0 mb-8">
+    <div className="bg-white rounded-lg mb-8">
       {/* Image */}
       <div className="relative overflow-hidden pb-2/3 mb-6">
         <img
@@ -44,7 +45,7 @@ const PostCard = ({ post }) => {
           </span>
         </a>
       </div>
-      <div className="flex justify-between items-center p-12 pt-4 mt-1 rounded-b-lg">
+      <div className="flex justify-between items-center px-12 py-8 pt-4 mt-1 rounded-b-lg border-t-2">
         <div className="text-xs tracking-widest">
           Post By{' '}
           <a href="#" class="uppercase">
@@ -52,11 +53,25 @@ const PostCard = ({ post }) => {
           </a>
         </div>
         <div class="flex items-center space-x-2">
-          <a href="#" className="p-2">
-            <Facebook className="w-4 h-4" />
+          <a
+            className="mt-1"
+            data-tooltip-id="fb-share"
+            data-tooltip-content="Share to Facebook">
+            <FacebookShareButton
+              url={`https://www.alvinle29.site/post/${post.slug}`}>
+              <Facebook className="w-4 h-4 mr-2" />
+              <Tooltip id="fb-share" />
+            </FacebookShareButton>
           </a>
-          <a href="#" className="p-2">
-            <FaGooglePlus className="w-4 h-4" />
+          <a
+            className="mt-1"
+            data-tooltip-id="tw-share"
+            data-tooltip-content="Share to Twitter/X">
+            <TwitterShareButton
+              url={`https://www.alvinle29.site/post/${post.slug}`}>
+              <Twitter className="w-4 h-4" />
+              <Tooltip id="tw-share" />
+            </TwitterShareButton>
           </a>
           <span class="flex items-center pl-2">
             {post.comments.length} <MessageCircle className="w-4 h-4 ml-1" />
