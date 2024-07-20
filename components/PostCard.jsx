@@ -18,7 +18,7 @@ const PostCard = ({ post }) => {
         />
         {/* Tag */}
         <div className="absolute top-6 left-6 bg-black text-white text-xs py-2 px-6 rounded shadow">
-          <a href="#" class="uppercase">
+          <a href="#" className="uppercase">
             {post.categories[0].name}
           </a>
         </div>
@@ -53,25 +53,21 @@ const PostCard = ({ post }) => {
           </a>
         </div>
         <div class="flex items-center space-x-2">
-          <div>
-            <FacebookShareButton
-              url={`https://www.alvinle29.site/post/${post.slug}`}
-              data-tooltip-id="fb-share"
-              data-tooltip-content="Share to Facebook">
-              <Facebook className="w-4 h-4 mr-2" />
-            </FacebookShareButton>
-            {/* <Tooltip id="fb-share" /> */}
-          </div>
+          <FacebookShareButton
+            url={`https://www.alvinle29.site/post/${post.slug}`}
+            data-tooltip-id="fb-share"
+            data-tooltip-content="Share to Facebook">
+            <Facebook className="w-4 h-4 mr-2" />
+          </FacebookShareButton>
+          {/* <Tooltip id="fb-share" /> */}
 
-          <div>
-            <TwitterShareButton
-              url={`https://www.alvinle29.site/post/${post.slug}`}
-              data-tooltip-id="tw-share"
-              data-tooltip-content="Share to Twitter/X">
-              <Twitter className="w-4 h-4" />
-            </TwitterShareButton>
-            {/* <Tooltip id="tw-share" /> */}
-          </div>
+          <TwitterShareButton
+            url={`https://www.alvinle29.site/post/${post.slug}`}
+            data-tooltip-id="tw-share"
+            data-tooltip-content="Share to Twitter/X">
+            <Twitter className="w-4 h-4" />
+          </TwitterShareButton>
+          {/* <Tooltip id="tw-share" /> */}
 
           <span class="flex items-center pl-2">
             {post.comments.length} <MessageCircle className="w-4 h-4 ml-1" />

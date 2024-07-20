@@ -50,7 +50,7 @@ const CommentsForm = ({ slug }) => {
   }
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
+    <div className="bg-white rounded-lg p-8 pb-12 mb-8">
       <h3 className="md:text-xl text-base mb-8 font-semibold border-b pb-4">
         để lại bình luận hen cạ nhà ^^
       </h3>
@@ -99,11 +99,11 @@ const CommentsForm = ({ slug }) => {
       {error && (
         <p className="text-xs text-red-500">All fields are required.</p>
       )}
-      <div className="mt-8">
+      <div className="mt-6">
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="transition duration-500 ease hover:bg-indigo-800 inline-block bg-pink-600 md:text-lg text-base rounded-full text-white px-8 py-3 cursor-pointer"
+          className="transition duration-500 ease rounded-md bg-pink-500 text-white hover:bg-pink-600 px-8 py-3 cursor-pointer"
         >
           Post Comment
         </button>

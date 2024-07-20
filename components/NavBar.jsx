@@ -24,25 +24,19 @@ const Navbar = () => {
     getCategories().then((newCategories) => setCategories(newCategories));
   }, []);
 
-  const navigation = [
-    { title: 'Home', href: '/' },
-    { title: 'Features', href: '/features' },
-    { title: 'About me', href: '/about' },
-    { title: 'Studio', href: '/studio' }
-  ];
   return (
     <div className="w-full bg-white/70 h-20 shadow-md sticky top-0 backdrop-blur-2xl transition-colors z-50">
       <div className="max-w-screen-xl mx-auto flex items-center px-4 lg:px-0 h-full">
         {/* Logo */}
-        <div className="flex flex-1 items-center justify-start">
-          <Logo title="ABCD" className="text-black" />
+        <div className="flex flex-1 items-center justify-start cursor-pointer">
+          <Logo title="Bach Le" className="text-black" />
         </div>
         {/* Navigation */}
         <div className="flex flex-1 justify-center">
           <nav className="hidden lg:block">
             <ul className="flex items-center m-0 p-0 list-none">
               <li className="px-4 first:ml-0 first:pl-0 last:mr-0 last:pr-0">
-                <div className="inline-block text-black text-xs font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
+                <div className="inline-block text-black text-sm font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
                   <Link href={`/`} key="home">
                     Home
                   </Link>
@@ -52,7 +46,7 @@ const Navbar = () => {
                 <Menu as="div" className="relative md:float-right mt-2">
                   <Menu.Button
                     key="blogs"
-                    className="mb-2 inline-block text-black text-xs font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
+                    className="mb-2 inline-block text-black text-sm font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
                     My Blogs
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -100,19 +94,19 @@ const Navbar = () => {
                 </Menu>
               </li>
               <li className="px-4 first:ml-0 first:pl-0 last:mr-0 last:pr-0">
-                <div className="inline-block text-black text-xs font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
+                <div className="inline-block text-black text-sm font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
                   <Link href={`/aboutme`} key="aboutme">
                     About me
                   </Link>
                 </div>
               </li>
-              <li className="px-4 first:ml-0 first:pl-0 last:mr-0 last:pr-0">
+              {/* <li className="px-4 first:ml-0 first:pl-0 last:mr-0 last:pr-0">
                 <a
                   href="contact.html"
                   className="inline-block text-black text-xs font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
                   Contact
                 </a>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>
@@ -121,21 +115,21 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <div className="flex space-x-4 text-gray-400">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/alvinle29"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook account link">
                 <Facebook className="w-4 h-4 ml-1 hover:text-[#ec4899]" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/shot_by_al_"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram account link">
                 <Instagram className="w-4 h-4 ml-1 hover:text-[#ec4899]" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/bach-l-298105138/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn account link">

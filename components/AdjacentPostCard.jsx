@@ -5,7 +5,7 @@ import Link from 'next/link'
 const AdjacentPostCard = ({ post, position }) => (
   <>
     <div
-      className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72"
+      className="absolute rounded-lg bg-center bg-no-repeat bg-cover inline-block w-full h-72"
       style={{ backgroundImage: `url('${post.featuredImage.url}')` }}
     />
     <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72" />
@@ -24,7 +24,7 @@ const AdjacentPostCard = ({ post, position }) => (
       <div className="absolute arrow-btn bottom-5 py-3 cursor-pointer bg-pink-600 left-4 rounded-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-7 text-white w-full"
+          className="h-7 text-white w-full"
           fill="none"
           viewBox="-4 0 24 24"
           stroke="currentColor"
@@ -42,7 +42,7 @@ const AdjacentPostCard = ({ post, position }) => (
       <div className="absolute arrow-btn bottom-5 py-3 cursor-pointer bg-pink-600 right-4 rounded-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-7 w-10 text-white w-full"
+          className="h-7 text-white w-full"
           fill="none"
           viewBox="-4 0 24 24"
           stroke="currentColor"
