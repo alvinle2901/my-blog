@@ -7,7 +7,7 @@ import {
   PostCard,
   PostWidget,
   Subscription
-} from '../components';
+} from '@components';
 import { getPosts } from '../services';
 
 export default function Home({ posts }) {
