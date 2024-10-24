@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import { Categories, PostWidget } from '../../components'
-import AboutMeInfo from '../../components/AboutMeInfo'
+import Head from 'next/head';
+
+import { Categories, PostWidget } from '../../components';
+import AboutMeInfo from '../../components/AboutMeInfo';
 
 export default function AboutMe() {
   return (
@@ -21,5 +22,5 @@ export default function AboutMe() {
         </div>
       </div>
     </div>
-  )
+  );
 }

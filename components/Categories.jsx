@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import Link from 'next/link';
 
 import { getCategories } from '../services';
@@ -18,20 +19,20 @@ const Categories = () => {
 
   return (
     <div className="bg-white rounded-lg p-8 mb-8">
-      <h3 className="text-xl uppercase font-[500] mb-4 border-b pb-1">
-        categories
-      </h3>
+      <h3 className="text-xl uppercase font-[500] mb-4 border-b pb-1">categories</h3>
 
-      {categories && categories.map((category, index) => (
-        <Link key={category.slug} href={`/category/${category.slug}`}>
-          <span
-            className={`cursor-pointer block hover:text-[#ec4899] ${
-              index !== categories.length - 1 ? 'mb-4 pb-2' : ''
-            }`}>
-            {category.name}
-          </span>
-        </Link>
-      ))}
+      {categories &&
+        categories.map((category, index) => (
+          <Link key={category.slug} href={`/category/${category.slug}`}>
+            <span
+              className={`cursor-pointer block hover:text-[#ec4899] ${
+                index !== categories.length - 1 ? 'mb-4 pb-2' : ''
+              }`}
+            >
+              {category.name}
+            </span>
+          </Link>
+        ))}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { request, gql } from 'graphql-request';
+import { gql, request } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
@@ -70,10 +70,7 @@ export const getSimilarPosts = async (categories, slug) => {
   const query = gql`
     query GetPostDetails($slug: String!, $categories: [String!]) {
       posts(
-        where: {
-          slug_not: $slug
-          AND: { categories_some: { slug_in: $categories } }
-        }
+        where: { slug_not: $slug, AND: { categories_some: { slug_in: $categories } } }
         last: 3
       ) {
         title

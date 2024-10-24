@@ -1,6 +1,8 @@
-import React from 'react'
-import moment from 'moment'
-import Link from 'next/link'
+import React from 'react';
+
+import Link from 'next/link';
+
+import moment from 'moment';
 
 const AdjacentPostCard = ({ post, position }) => (
   <>
@@ -57,6 +59,6 @@ const AdjacentPostCard = ({ post, position }) => (
       </div>
     )}
   </>
-)
+);
 
-export default AdjacentPostCard
+export default AdjacentPostCard;

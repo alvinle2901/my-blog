@@ -49,7 +49,8 @@ const Subscription = () => {
           />
           <button
             type="submit"
-            className="block w-full rounded-md bg-pink-500 text-white text-sm uppercase p-3 tracking-wider font-semibold transition duration-500 hover:bg-pink-600">
+            className="block w-full rounded-md bg-pink-500 text-white text-sm uppercase p-3 tracking-wider font-semibold transition duration-500 hover:bg-pink-600"
+          >
             Send
           </button>
           {success ? (

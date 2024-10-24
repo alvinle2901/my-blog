@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Loader = () => (
   <div className="text-center">
@@ -30,6 +30,6 @@ const Loader = () => (
       Loading
     </button>
   </div>
-)
+);
 
-export default Loader
+export default Loader;

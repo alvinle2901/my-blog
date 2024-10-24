@@ -1,12 +1,13 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Facebook, Instagram, Linkedin, XCircle } from 'react-feather';
+import { FiMenu } from 'react-icons/fi';
+
 import Link from 'next/link';
-import Logo from './Logo';
 
 import { Menu, Transition } from '@headlessui/react';
-import { FiMenu } from 'react-icons/fi';
-import { Facebook, Instagram, Linkedin, XCircle } from 'react-feather';
 
 import { getCategories } from '../services';
+import Logo from './Logo';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -46,13 +47,15 @@ const Navbar = () => {
                 <Menu as="div" className="relative md:float-right mt-2">
                   <Menu.Button
                     key="blogs"
-                    className="mb-2 inline-block text-black text-sm font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]">
+                    className="mb-2 inline-block text-black text-sm font-medium leading-8 uppercase relative before:absolute before:content-[''] before:left-0 before:top-[90%] before:w-full before:h-full after:absolute after:content-[''] after:transition-all after:duration-300 after:ease-in-out after:z-[-1] after:left-1 after:bottom-1 after:w-0 after:h-2 after:bg-pink-200 hover:after:w-[72%] active:after:w-[72%]"
+                  >
                     My Blogs
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      className="md:float-right mt-2 align-middle ml-1 h-4 w-4">
+                      className="md:float-right mt-2 align-middle ml-1 h-4 w-4"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
@@ -67,10 +70,12 @@ const Navbar = () => {
                     enterTo="transform opacity-100 scale-100"
                     leave="transition ease-in duration-75"
                     leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95">
+                    leaveTo="transform opacity-0 scale-95"
+                  >
                     <Menu.Items
                       key="list"
-                      className="origin-top-right absolute right-0 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 divide-y divide-gray-100 focus:outline-none">
+                      className="origin-top-right absolute right-0 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 divide-y divide-gray-100 focus:outline-none"
+                    >
                       {categories.map((category) => (
                         <div className="py-1" key={category.name}>
                           <Menu.Item>
@@ -78,11 +83,10 @@ const Navbar = () => {
                               <a
                                 href={`/category/${category.slug}`}
                                 className={classNames(
-                                  active
-                                    ? 'bg-gray-100 text-gray-900'
-                                    : 'text-gray-700',
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                   'block px-4 py-2 text-sm sticky'
-                                )}>
+                                )}
+                              >
                                 {category.name}
                               </a>
                             )}
@@ -118,21 +122,24 @@ const Navbar = () => {
                 href="https://www.facebook.com/alvinle29"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook account link">
+                aria-label="Facebook account link"
+              >
                 <Facebook className="w-4 h-4 ml-1 hover:text-[#ec4899]" />
               </a>
               <a
                 href="https://www.instagram.com/shot_by_al_"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram account link">
+                aria-label="Instagram account link"
+              >
                 <Instagram className="w-4 h-4 ml-1 hover:text-[#ec4899]" />
               </a>
               <a
                 href="https://www.linkedin.com/in/bach-l-298105138/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn account link">
+                aria-label="LinkedIn account link"
+              >
                 <Linkedin className="w-4 h-4 ml-1 hover:text-[#ec4899]" />
               </a>
             </div>
@@ -171,7 +178,8 @@ const Navbar = () => {
                 <button
                   className="btn-close"
                   onClick={toggleOffcanvas}
-                  aria-label="Close mobile menu offcanvas">
+                  aria-label="Close mobile menu offcanvas"
+                >
                   <XCircle />
                 </button>
               </div>
@@ -182,28 +190,32 @@ const Navbar = () => {
                   <li className="py-2">
                     <a
                       href="index.html"
-                      className="block text-black font-medium uppercase mobile-menu__link active">
+                      className="block text-black font-medium uppercase mobile-menu__link active"
+                    >
                       Home
                     </a>
                   </li>
                   <li className="py-2">
                     <a
                       href="#feature-posts"
-                      className="block text-black font-medium uppercase mobile-menu__link">
+                      className="block text-black font-medium uppercase mobile-menu__link"
+                    >
                       Features
                     </a>
                   </li>
                   <li className="py-2">
                     <a
                       href="about-me.html"
-                      className="block text-black font-medium uppercase mobile-menu__link">
+                      className="block text-black font-medium uppercase mobile-menu__link"
+                    >
                       About Me
                     </a>
                   </li>
                   <li className="py-2">
                     <a
                       href="contact.html"
-                      className="block text-black font-medium uppercase mobile-menu__link">
+                      className="block text-black font-medium uppercase mobile-menu__link"
+                    >
                       Contact
                     </a>
                   </li>
@@ -214,7 +226,8 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social__link"
-                    aria-label="Facebook account link">
+                    aria-label="Facebook account link"
+                  >
                     <i data-feather="facebook"></i>
                   </a>
                   <a
@@ -222,7 +235,8 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social__link"
-                    aria-label="Instagram account link">
+                    aria-label="Instagram account link"
+                  >
                     <i data-feather="instagram"></i>
                   </a>
                   <a
@@ -230,7 +244,8 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social__link"
-                    aria-label="LinkedIn account link">
+                    aria-label="LinkedIn account link"
+                  >
                     <i data-feather="linkedin"></i>
                   </a>
                   <a
@@ -238,7 +253,8 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social__link"
-                    aria-label="Twitter account link">
+                    aria-label="Twitter account link"
+                  >
                     <i data-feather="twitter"></i>
                   </a>
                   <a
@@ -246,7 +262,8 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social__link"
-                    aria-label="YouTube account link">
+                    aria-label="YouTube account link"
+                  >
                     <i data-feather="youtube"></i>
                   </a>
                 </div>

@@ -1,10 +1,11 @@
 import React from 'react';
-import moment from 'moment';
+import { ChevronRight, Facebook, MessageCircle, Twitter } from 'react-feather';
+import { FacebookShareButton, TwitterShareButton } from 'react-share';
+import { Tooltip } from 'react-tooltip';
+
 import Link from 'next/link';
 
-import { Tooltip } from 'react-tooltip';
-import { FacebookShareButton, TwitterShareButton } from 'react-share';
-import { ChevronRight, Facebook, MessageCircle, Twitter } from 'react-feather';
+import moment from 'moment';
 
 const PostCard = ({ post }) => {
   return (
@@ -33,13 +34,12 @@ const PostCard = ({ post }) => {
           <Link href={`/post/${post.slug}`}>{post.title}</Link>
         </h2>
         {/* Excerpt */}
-        <p className="text-justify font-light tracking-wide leading-relaxed my-3">
-          {post.excerpt}
-        </p>
+        <p className="text-justify font-light tracking-wide leading-relaxed my-3">{post.excerpt}</p>
         {/* Read more */}
         <a
           href={`/post/${post.slug}`}
-          className="mt-4 inline-block text-base uppercase font-[500] text-[#090606] p-0 hover:text-[#ec4899]">
+          className="mt-4 inline-block text-base uppercase font-[500] text-[#090606] p-0 hover:text-[#ec4899]"
+        >
           <span className="inline-flex items-center">
             Read More <ChevronRight className="w-4 h-4 ml-1" />
           </span>
@@ -56,7 +56,8 @@ const PostCard = ({ post }) => {
           <FacebookShareButton
             url={`https://www.alvinle29.site/post/${post.slug}`}
             data-tooltip-id="fb-share"
-            data-tooltip-content="Share to Facebook">
+            data-tooltip-content="Share to Facebook"
+          >
             <Facebook className="w-4 h-4 mr-2" />
           </FacebookShareButton>
           {/* <Tooltip id="fb-share" /> */}
@@ -64,7 +65,8 @@ const PostCard = ({ post }) => {
           <TwitterShareButton
             url={`https://www.alvinle29.site/post/${post.slug}`}
             data-tooltip-id="tw-share"
-            data-tooltip-content="Share to Twitter/X">
+            data-tooltip-content="Share to Twitter/X"
+          >
             <Twitter className="w-4 h-4" />
           </TwitterShareButton>
           {/* <Tooltip id="tw-share" /> */}

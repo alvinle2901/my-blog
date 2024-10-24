@@ -1,7 +1,9 @@
 import React from 'react';
-import moment from 'moment';
+
 import Image from 'next/image';
 import Link from 'next/link';
+
+import moment from 'moment';
 
 const FeaturedPostCard = ({ post }) => (
   <div className="relative md:h-72 h-44">

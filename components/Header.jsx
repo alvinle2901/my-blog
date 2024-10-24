@@ -1,21 +1,23 @@
-import React, { useContext, useState, useEffect, Fragment } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Menu, Transition } from '@headlessui/react'
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 
-import { getCategories } from '../services'
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { Menu, Transition } from '@headlessui/react';
+
+import { getCategories } from '../services';
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 const Header = () => {
-  const [categories, setCategories] = useState([])
-  const [navbar, setNavbar] = useState(false)
+  const [categories, setCategories] = useState([]);
+  const [navbar, setNavbar] = useState(false);
 
   useEffect(() => {
-    getCategories().then((newCategories) => setCategories(newCategories))
-  }, [])
+    getCategories().then((newCategories) => setCategories(newCategories));
+  }, []);
 
   return (
     <div className="container mx-auto px-10 mb-8">
@@ -23,9 +25,7 @@ const Header = () => {
         <div className="md:float-left contents block">
           <div className="float-left mt-3">
             <Link href="/" key="home">
-              <span className="cursor-pointer md:text-3xl text-xl text-white">
-                chú pé ngu ngục
-              </span>
+              <span className="cursor-pointer md:text-3xl text-xl text-white">chú pé ngu ngục</span>
             </Link>
           </div>
           <div className="md:hidden float-right">
@@ -34,12 +34,7 @@ const Header = () => {
               onClick={() => setNavbar(!navbar)}
             >
               {navbar ? (
-                <Image
-                  src="/close-icon.svg"
-                  width={30}
-                  height={30}
-                  alt="logo"
-                />
+                <Image src="/close-icon.svg" width={30} height={30} alt="logo" />
               ) : (
                 <Image
                   src="/menu-icon.svg"
@@ -97,9 +92,7 @@ const Header = () => {
                         <a
                           href={`/category/${category.slug}`}
                           className={classNames(
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
+                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                             'block px-4 py-2 text-sm sticky'
                           )}
                         >
@@ -125,7 +118,7 @@ const Header = () => {
               <Link href="/aboutme">
                 <a
                   onClick={() => {
-                    setNavbar(!navbar)
+                    setNavbar(!navbar);
                   }}
                 >
                   about me
@@ -146,7 +139,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

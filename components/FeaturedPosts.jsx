@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-import { FeaturedPostCard } from './';
 import { getFeaturedPosts } from '../services';
+import { FeaturedPostCard } from './';
 
 const responsive = {
   superLargeDesktop: {
@@ -46,7 +46,8 @@ const FeaturedPosts = () => {
         className="h-7 text-white w-full"
         fill="none"
         viewBox="-4 0 24 24"
-        stroke="currentColor">
+        stroke="currentColor"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -64,7 +65,8 @@ const FeaturedPosts = () => {
         className="h-7 text-white w-full"
         fill="none"
         viewBox="-4 0 24 24"
-        stroke="currentColor">
+        stroke="currentColor"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -82,12 +84,11 @@ const FeaturedPosts = () => {
         // customLeftArrow={customLeftArrow}
         // customRightArrow={customRightArrow}
         responsive={responsive}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        itemClass="md:px-8 px-2">
+        removeArrowOnDeviceType={['tablet', 'mobile']}
+        itemClass="md:px-8 px-2"
+      >
         {dataLoaded &&
-          featuredPosts.map((post, index) => (
-            <FeaturedPostCard key={index} post={post} />
-          ))}
+          featuredPosts.map((post, index) => <FeaturedPostCard key={index} post={post} />)}
       </Carousel>
     </div>
   );

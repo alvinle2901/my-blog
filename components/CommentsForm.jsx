@@ -1,53 +1,53 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 
-import { submitComment } from '../services'
+import { submitComment } from '../services';
 
 const CommentsForm = ({ slug }) => {
-  const [error, setError] = useState(false)
-  const [localStorage, setLocalStorage] = useState(null)
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  const [error, setError] = useState(false);
+  const [localStorage, setLocalStorage] = useState(null);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const commentInput = useRef()
-  const nameInput = useRef()
-  const emailInput = useRef()
-  const dataStoredInput = useRef()
+  const commentInput = useRef();
+  const nameInput = useRef();
+  const emailInput = useRef();
+  const dataStoredInput = useRef();
 
   useEffect(() => {
-    nameInput.current.value = window.localStorage.getItem('name')
-    emailInput.current.value = window.localStorage.getItem('email')
-  }, [])
+    nameInput.current.value = window.localStorage.getItem('name');
+    emailInput.current.value = window.localStorage.getItem('email');
+  }, []);
 
   const handleCommentSubmission = () => {
-    setError(false)
+    setError(false);
 
-    const { value: comment } = commentInput.current
-    const { value: name } = nameInput.current
-    const { value: email } = emailInput.current
-    const { checked: dataStored } = dataStoredInput.current
+    const { value: comment } = commentInput.current;
+    const { value: name } = nameInput.current;
+    const { value: email } = emailInput.current;
+    const { checked: dataStored } = dataStoredInput.current;
 
     if (!comment || !name || !email) {
-      setError(true)
-      return
+      setError(true);
+      return;
     }
 
-    const commentObj = { name, email, comment, slug }
+    const commentObj = { name, email, comment, slug };
 
     if (dataStored) {
-      window.localStorage.setItem('name', name)
-      window.localStorage.setItem('email', email)
+      window.localStorage.setItem('name', name);
+      window.localStorage.setItem('email', email);
     } else {
-      window.localStorage.removeItem('name', name)
-      window.localStorage.removeItem('email', email)
+      window.localStorage.removeItem('name', name);
+      window.localStorage.removeItem('email', email);
     }
 
     submitComment(commentObj).then((res) => {
-      setShowSuccessMessage(true)
+      setShowSuccessMessage(true);
 
       setTimeout(() => {
-        setShowSuccessMessage(false)
-      }, 3000)
-    })
-  }
+        setShowSuccessMessage(false);
+      }, 3000);
+    });
+  };
 
   return (
     <div className="bg-white rounded-lg p-8 pb-12 mb-8">
@@ -87,18 +87,13 @@ const CommentsForm = ({ slug }) => {
             name="storeData"
             value="true"
           />
-          <label
-            className="text-gray-500 cursor-pointer ml-2"
-            htmlFor="storeData"
-          >
+          <label className="text-gray-500 cursor-pointer ml-2" htmlFor="storeData">
             Save my email and name for the next time I comment
           </label>
         </div>
       </div>
 
-      {error && (
-        <p className="text-xs text-red-500">All fields are required.</p>
-      )}
+      {error && <p className="text-xs text-red-500">All fields are required.</p>}
       <div className="mt-6">
         <button
           type="button"
@@ -114,7 +109,7 @@ const CommentsForm = ({ slug }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CommentsForm
+export default CommentsForm;

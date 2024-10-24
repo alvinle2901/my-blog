@@ -1,26 +1,26 @@
-import React from 'react'
-import moment from 'moment'
+import React from 'react';
+import ImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
-import ImageGallery from 'react-image-gallery'
-import 'react-image-gallery/styles/css/image-gallery.css'
+import moment from 'moment';
 
 const PostDetail = ({ post }) => {
-  const images = []
+  const images = [];
 
   const getContentFragment = (index, text, obj, type) => {
-    let modifiedText = text
+    let modifiedText = text;
 
     if (obj) {
       if (obj.bold) {
-        modifiedText = <b key={index}>{text}</b>
+        modifiedText = <b key={index}>{text}</b>;
       }
 
       if (obj.italic) {
-        modifiedText = <em key={index}>{text}</em>
+        modifiedText = <em key={index}>{text}</em>;
       }
 
       if (obj.underline) {
-        modifiedText = <u key={index}>{text}</u>
+        modifiedText = <u key={index}>{text}</u>;
       }
     }
 
@@ -32,7 +32,7 @@ const PostDetail = ({ post }) => {
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h3>
-        )
+        );
       case 'paragraph':
         return (
           <p key={index} className="mb-8 md:text-base text-sm">
@@ -40,7 +40,7 @@ const PostDetail = ({ post }) => {
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </p>
-        )
+        );
       case 'heading-four':
         return (
           <h4 key={index} className="text-md font-semibold mb-4">
@@ -48,22 +48,16 @@ const PostDetail = ({ post }) => {
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h4>
-        )
+        );
       case 'image':
-        images.push({ original: obj.src, thumbnail: obj.src })
+        images.push({ original: obj.src, thumbnail: obj.src });
         return (
-          <img
-            key={index}
-            alt={obj.title}
-            height={obj.height}
-            width={obj.width}
-            src={obj.src}
-          />
-        )
+          <img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} />
+        );
       default:
-        return modifiedText
+        return modifiedText;
     }
-  }
+  };
 
   return (
     <div className="bg-white rounded-lg md:pb-12 pb-4 mb-8">
@@ -112,15 +106,15 @@ const PostDetail = ({ post }) => {
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemIndex) =>
             getContentFragment(itemIndex, item.text, item)
-          )
-          return getContentFragment(index, children, typeObj, typeObj.type)
+          );
+          return getContentFragment(index, children, typeObj, typeObj.type);
         })}
         {post.categories[0].slug != 'travel' ? null : (
           <ImageGallery items={images} showPlayButton={false} />
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PostDetail
+export default PostDetail;

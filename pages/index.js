@@ -1,11 +1,11 @@
 import Head from 'next/head';
 
 import {
-  PostCard,
   Categories,
-  PostWidget,
-  MyInfo,
   FeaturedPosts,
+  MyInfo,
+  PostCard,
+  PostWidget,
   Subscription
 } from '../components';
 import { getPosts } from '../services';

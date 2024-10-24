@@ -1,18 +1,19 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import {
-  PostDetail,
+  AdjacentPosts,
   Categories,
-  PostWidget,
   Comments,
   CommentsForm,
   Loader,
-  AdjacentPosts,
+  PostDetail,
+  PostWidget,
   Subscription
 } from '../../components';
-import { getPosts, getPostDetails } from '../../services';
+import { getPostDetails, getPosts } from '../../services';
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
@@ -27,10 +28,7 @@ const PostDetails = ({ post }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <Head>
             <title>{post.title}</title>
-            <meta
-              name="viewport"
-              content="initial-scale=1.0, width=device-width"
-            />
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           </Head>
           <div className="col-span-1 lg:col-span-8">
             <PostDetail post={post} />

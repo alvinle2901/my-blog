@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import Image from 'next/image';
-import moment from 'moment';
 import Link from 'next/link';
 
-import { getSimilarPosts, getRecentPosts } from '../services';
+import moment from 'moment';
+
+import { getRecentPosts, getSimilarPosts } from '../services';
 
 const PostWidget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
@@ -30,7 +32,8 @@ const PostWidget = ({ categories, slug }) => {
           key={index}
           className={`flex items-center w-full ${
             index !== relatedPosts.length - 1 ? 'border-b pb-1 mb-4' : ''
-          }`}>
+          }`}
+        >
           <div className="w-20 flex-none">
             <Image
               alt={post.title}

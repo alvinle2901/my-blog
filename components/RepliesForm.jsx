@@ -1,36 +1,37 @@
-import React, { useRef, useState } from 'react'
-import { submitReply } from '../services'
+import React, { useRef, useState } from 'react';
+
+import { submitReply } from '../services';
 
 const RepliesForm = ({ commentId }) => {
-  const replyInput = useRef()
-  const nameInput = useRef()
-  const emailInput = useRef()
+  const replyInput = useRef();
+  const nameInput = useRef();
+  const emailInput = useRef();
 
-  const [error, setError] = useState(false)
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  const [error, setError] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleReplySubmission = () => {
-    setError(false)
+    setError(false);
 
-    const { value: reply } = replyInput.current
-    const { value: name } = nameInput.current
-    const { value: email } = emailInput.current
+    const { value: reply } = replyInput.current;
+    const { value: name } = nameInput.current;
+    const { value: email } = emailInput.current;
 
     if (!reply || !name || !email) {
-      setError(true)
-      return
+      setError(true);
+      return;
     }
 
-    const replyObj = { name, email, reply, commentId }
+    const replyObj = { name, email, reply, commentId };
 
     submitReply(replyObj).then((res) => {
-      setShowSuccessMessage(true)
+      setShowSuccessMessage(true);
 
       setTimeout(() => {
-        setShowSuccessMessage(false)
-      }, 3000)
-    })
-  }
+        setShowSuccessMessage(false);
+      }, 3000);
+    });
+  };
 
   return (
     <div className="bg-white rounded-lg ml-8 mt-4">
@@ -58,9 +59,7 @@ const RepliesForm = ({ commentId }) => {
           name="email"
         />
       </div>
-      {error && (
-        <p className="text-xs text-red-500">All fields are required.</p>
-      )}
+      {error && <p className="text-xs text-red-500">All fields are required.</p>}
       <div className="mt-2">
         <button
           type="button"
@@ -76,7 +75,7 @@ const RepliesForm = ({ commentId }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RepliesForm
+export default RepliesForm;
