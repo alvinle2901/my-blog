@@ -70,7 +70,7 @@ const Navbar = () => {
                     leaveTo="transform opacity-0 scale-95">
                     <Menu.Items
                       key="list"
-                      className="origin-top-right absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 divide-y divide-gray-100 focus:outline-none">
+                      className="origin-top-right absolute right-0 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 divide-y divide-gray-100 focus:outline-none">
                       {categories.map((category) => (
                         <div className="py-1" key={category.name}>
                           <Menu.Item>
