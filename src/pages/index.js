@@ -1,20 +1,17 @@
 import Head from 'next/head';
 
-import {
-  Categories,
-  FeaturedPosts,
-  MyInfo,
-  PostCard,
-  PostWidget,
-  Subscription
-} from '@components';
-import { getPosts } from '../services';
+import { FeaturedPosts } from '@components/featured';
+import { PostCard } from '@components/post';
+import { Subscription } from '@components/subscribe';
+import { MyInfo, PostWidget } from '@components/widgets';
+import { Categories } from '@components/widgets';
+import { getPosts } from '@services';
 
 export default function Home({ posts }) {
   return (
     <>
       <Head>
-        <title>Bach Le</title>
+        <title>a wandering soul.</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="container md:w-10/12 mx-auto md:px-32 px-4 mb-8 mt-8">

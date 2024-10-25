@@ -5,9 +5,9 @@ import { FiMenu } from 'react-icons/fi';
 import Link from 'next/link';
 
 import { Menu, Transition } from '@headlessui/react';
+import { getCategories } from '@services';
 
-import { getCategories } from '../services';
-import Logo from './Logo';
+import Logo from '../../Logo';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="max-w-screen-xl mx-auto flex items-center px-4 lg:px-0 h-full">
         {/* Logo */}
         <div className="flex flex-1 items-center justify-start cursor-pointer">
-          <Logo title="Bach Le" className="text-black" />
+          <Logo className="text-black" />
         </div>
         {/* Navigation */}
         <div className="flex flex-1 justify-center">

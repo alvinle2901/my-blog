@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
+import { Replies, RepliesForm } from '@components/replies';
 import parse from 'html-react-parser';
 import moment from 'moment';
-
-import Replies from './Replies';
-import RepliesForm from './RepliesForm';
 
 const Comments = ({ comments }) => {
   const [replyState, setReplyState] = useState(false);

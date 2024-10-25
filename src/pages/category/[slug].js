@@ -3,8 +3,11 @@ import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { Categories, Loader, PostCard } from '../../components';
-import { getCategories, getCategoryPost } from '../../services';
+import { PostCard } from '@components/post';
+import { Categories } from '@components/widgets';
+import { getCategories, getCategoryPost } from '@services';
+
+import { Loader } from '../../components';
 
 const CategoryPost = ({ posts, params }) => {
   const router = useRouter();

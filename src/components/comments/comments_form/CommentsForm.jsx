@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { submitComment } from '../services';
+import { submitComment } from '@services';
 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);

@@ -4,8 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Menu, Transition } from '@headlessui/react';
-
-import { getCategories } from '../services';
+import { getCategories } from '@services';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');

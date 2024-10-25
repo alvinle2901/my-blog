@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import Link from 'next/link';
 
-import { getCategories } from '../services';
+import { getCategories } from '@services';
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);

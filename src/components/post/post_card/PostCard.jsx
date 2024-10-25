@@ -48,11 +48,11 @@ const PostCard = ({ post }) => {
       <div className="flex justify-between items-center px-12 py-8 pt-4 mt-1 rounded-b-lg border-t-2">
         <div className="text-xs tracking-widest">
           Post By{' '}
-          <a href="#" class="uppercase">
+          <a href="#" className="uppercase">
             {post.author.name}
           </a>
         </div>
-        <div class="flex items-center space-x-2">
+        <div className="flex items-center space-x-2">
           <FacebookShareButton
             url={`https://www.alvinle29.site/post/${post.slug}`}
             data-tooltip-id="fb-share"
@@ -71,7 +71,7 @@ const PostCard = ({ post }) => {
           </TwitterShareButton>
           {/* <Tooltip id="tw-share" /> */}
 
-          <span class="flex items-center pl-2">
+          <span className="flex items-center pl-2">
             {post.comments.length} <MessageCircle className="w-4 h-4 ml-1" />
           </span>
         </div>

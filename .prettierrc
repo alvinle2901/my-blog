@@ -5,14 +5,7 @@
   "printWidth": 100,
   "singleQuote": true,
   "trailingComma": "none",
-  "importOrder": [
-    "^react(.*)",
-    "^next(.*)",
-    "antd/(.*)",
-    "<THIRD_PARTY_MODULES>",
-    "@/(.*)",
-    "^[./]"
-  ],
+  "importOrder": ["^react(.*)", "^next(.*)", "<THIRD_PARTY_MODULES>", "@/(.*)", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

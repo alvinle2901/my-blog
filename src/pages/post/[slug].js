@@ -3,17 +3,14 @@ import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import {
-  AdjacentPosts,
-  Categories,
-  Comments,
-  CommentsForm,
-  Loader,
-  PostDetail,
-  PostWidget,
-  Subscription
-} from '../../components';
-import { getPostDetails, getPosts } from '../../services';
+import { AdjacentPosts } from '@components/adjacent_post';
+import { Comments, CommentsForm } from '@components/comments';
+import { PostDetail } from '@components/post';
+import { Subscription } from '@components/subscribe';
+import { Categories, PostWidget } from '@components/widgets';
+import { getPostDetails, getPosts } from '@services';
+
+import { Loader } from '../../components';
 
 const PostDetails = ({ post }) => {
   const router = useRouter();

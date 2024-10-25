@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import { getMyInfo } from '../services';
+import { getMyInfo } from '@services';
 
-const AboutMeInfo = () => {
+const AboutMeDetail = () => {
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 
@@ -89,4 +89,4 @@ const AboutMeInfo = () => {
   );
 };
 
-export default AboutMeInfo;
+export default AboutMeDetail;

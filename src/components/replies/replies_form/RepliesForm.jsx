@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-import { submitReply } from '../services';
+import { submitReply } from '@services';
 
 const RepliesForm = ({ commentId }) => {
   const replyInput = useRef();

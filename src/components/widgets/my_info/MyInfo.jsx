@@ -3,7 +3,7 @@ import { ArrowRight, Facebook, GitHub, Instagram, Linkedin } from 'react-feather
 
 import Link from 'next/link';
 
-import { getMyInfo } from '../services';
+import { getMyInfo } from '@services';
 
 const MyInfo = () => {
   const [info, setInfo] = useState([]);

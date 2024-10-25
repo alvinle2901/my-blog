@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
+import { getReplies } from '@services';
 import moment from 'moment';
 
-import { getReplies } from '../services';
-import RepliesForm from './RepliesForm';
+import { RepliesForm } from '../replies_form';
 
 const Replies = ({ comment }) => {
   const [replies, setReplies] = useState([]);
