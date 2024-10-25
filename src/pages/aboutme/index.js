@@ -1,8 +1,7 @@
 import Head from 'next/head';
 
 import { AboutMeDetail } from '@components/about_me';
-
-import { Categories, PostWidget } from '../../components';
+import { Categories, PostWidget } from '@components/widgets';
 
 export default function AboutMe() {
   return (
